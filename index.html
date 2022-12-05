@@ -5,35 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <form action="">
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="password"
-      />
-      <input type="checkbox" id="checkbox-password" name="checkbox-password" />
-
-      <button type="submit">submit</button>
-    </form>
-
-    <script>
-      let inputPwd = document.querySelector("#password");
-      let checkbox = document.querySelector("#checkbox-password");
-      let boolean = false;
-
-      checkbox.addEventListener("click", function (e) {
-        console.log(boolean);
-        if (boolean) {
-          boolean = false;
-          inputPwd.type = "password";
-        } else {
-          boolean = true;
-          inputPwd.type = "text";
-        }
-      });
-    </script>
+    <div class="page-wrapper">
+      <nav>
+        <ul>
+          <li><a href="#">Kwick</a></li>
+          <li><a href="#">Chat</a></li>
+          <li><a href="#">Sign in</a></li>
+          <li><a href="#">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
   </body>
 </html>
