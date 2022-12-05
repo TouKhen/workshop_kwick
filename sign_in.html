@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Kwick</title>
+    <title>Sign in | Kwick</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
     <!-- Font awesome -->
@@ -16,31 +16,53 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- JS -->
     <script src="js/nav.js" defer></script>
+    <script src="js/user.js" defer></script>
   </head>
   <body>
     <div id="page-wrapper" class="orange-bg">
-      <main id="home-main">
+      <main id="main-sign">
         <nav class="navbar navbar-clear">
           <ul>
             <li class="navbar-logo">
-              <a href="#"><h1>Kwick</h1></a>
+              <a href="index.html"><h1>Kwick</h1></a>
             </li>
             <li class="navbar-burger"><i class="fas fa-bars"></i></li>
             <div class="dropdown-menu hidden">
               <ul>
                 <li><a href="chat.html">Chat</a></li>
-                <li><a href="sign_in.html">Sign in</a></li>
-                <li class="navbar-sign-up-btn">
-                  <a href="sign_up.html">Sign up</a>
-                </li>
+                <li><a href="#">Sign in</a></li>
+                <li class="navbar-sign-up-btn"><a href="#">Sign up</a></li>
               </ul>
             </div>
           </ul>
         </nav>
 
-        <h2>Kwick <br /><span>a new easy way to chat</span></h2>
+        <section>
+          <h2>Sign in</h2>
+          <form action="" method="post">
+            <label for="username">Username <span>*</span></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              required
+            />
 
-        <a class="big-btn" href="chat.html">> chat <</a>
+            <label for="password">Password <span>*</span></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+
+            <a href="#">Sign in</a>
+
+            <button class="btn-black" type="submit">Sign in</button>
+          </form>
+        </section>
       </main>
     </div>
   </body>
