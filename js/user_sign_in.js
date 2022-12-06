@@ -9,7 +9,7 @@ signInForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   fetch(
-    "http://greenvelvet.alwaysdata.net/kwick/api/login/" +
+    "https://greenvelvet.alwaysdata.net/kwick/api/login/" +
       signInUsername.value +
       "/" +
       signInPwd.value

@@ -4,7 +4,7 @@ let user_nb = document.querySelector("#user-nb");
 
 let userToken = localStorage.getItem("userToken");
 let userUrl =
-  "http://greenvelvet.alwaysdata.net/kwick/api/user/logged/" + userToken;
+  "https://greenvelvet.alwaysdata.net/kwick/api/user/logged/" + userToken;
 
 console.log(userUrl);
 
@@ -28,7 +28,7 @@ user_fetch;
 // chat list
 
 let chat_list = document.querySelector("#chat-list");
-let chatUrl = "http://greenvelvet.alwaysdata.net/kwick/api/talk/list/";
+let chatUrl = "https://greenvelvet.alwaysdata.net/kwick/api/talk/list/";
 chatUrl = chatUrl + userToken + "/" + 1327171160;
 
 // Get all the messages sent to the server
@@ -86,7 +86,7 @@ msg_form.addEventListener("submit", function (event) {
   msg_steralized = msg_steralized.replace(" ", "%20");
 
   let msgUrl =
-    "http://greenvelvet.alwaysdata.net/kwick/api/say/" +
+    "https://greenvelvet.alwaysdata.net/kwick/api/say/" +
     userToken +
     "/" +
     userId +
