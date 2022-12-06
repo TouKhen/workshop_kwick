@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- JS -->
     <script src="js/nav.js" defer></script>
-    <script src="js/user.js" defer></script>
+    <script src="js/user_sign_in.js" defer></script>
   </head>
   <body>
     <div id="page-wrapper" class="orange-bg">
@@ -30,8 +30,11 @@
             <div class="dropdown-menu hidden">
               <ul>
                 <li><a href="chat.html">Chat</a></li>
-                <li><a href="#">Sign in</a></li>
+                <li id="sign-in-btn"><a href="#">Sign in</a></li>
                 <li class="navbar-sign-up-btn"><a href="#">Sign up</a></li>
+                <li id="logout">
+                  <a href="#">Logout</a>
+                </li>
               </ul>
             </div>
           </ul>
@@ -39,7 +42,7 @@
 
         <section>
           <h2>Sign in</h2>
-          <form id="sign-in-form" action="index.html" method="post">
+          <form id="sign-in-form" action="chat.html" method="post">
             <label for="username">Username <span>*</span></label>
             <input
               type="text"

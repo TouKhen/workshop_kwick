@@ -15,6 +15,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- JS -->
+    <script src="js/security.js"></script>
     <script src="js/nav.js" defer></script>
     <script src="js/chat.js" defer></script>
   </head>
@@ -30,9 +31,12 @@
             <div class="dropdown-menu hidden">
               <ul>
                 <li><a href="#">Chat</a></li>
-                <li><a href="sign_in.html">Sign in</a></li>
+                <li id="sign-in-btn"><a href="sign_in.html">Sign in</a></li>
                 <li class="navbar-sign-up-btn">
                   <a href="sign_up.html">Sign up</a>
+                </li>
+                <li id="logout">
+                  <a href="#">Logout</a>
                 </li>
               </ul>
             </div>
@@ -47,15 +51,7 @@
 
         <!-- chat section -->
         <section id="chat-section">
-          <div id="chat-list">
-            <div class="msg">
-              <p class="msg-username">User 1</p>
-              <p class="msg-text">
-                Lorem ipsum dolor sit amet consectetur. Interdum tincidunt
-                malesuada ipsum mauris sed volutpat fermentum at lorem.
-              </p>
-            </div>
-          </div>
+          <div id="chat-list"></div>
 
           <form id="msg-form">
             <input
@@ -63,6 +59,7 @@
               id="message"
               name="message"
               placeholder="message"
+              maxlength="140"
               required
             />
             <button type="submit"><i class="fas fa-paper-plane"></i></button>
