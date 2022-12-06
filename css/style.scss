@@ -241,6 +241,13 @@ html {
                 }
             }
 
+            p {
+                font-family: $jua;
+                font-size: 1.6rem;
+                color: #ff0000;
+                margin-bottom: 1rem;
+            }
+
             a {
                 font-family: $poppins;
                 font-size: 1.4rem;
@@ -290,6 +297,7 @@ html {
                 background-color: $orange;
                 padding: 1rem 3rem;
                 border-radius: 5rem;
+                margin-right: 1rem;
             }
         }
     }
