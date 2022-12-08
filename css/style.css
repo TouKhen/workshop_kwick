@@ -68,12 +68,14 @@ html {
   margin-left: auto;
   color: #ffffff;
   font-size: 3rem;
+  cursor: pointer;
 }
 .navbar > ul .dropdown-menu {
   position: absolute;
   top: 6rem;
   left: 0;
   width: 100%;
+  padding-inline: 1rem;
 }
 .navbar > ul .dropdown-menu li {
   margin-bottom: 1rem;
@@ -83,7 +85,7 @@ html {
   font-weight: 700;
   font-size: 1.8rem;
 }
-.navbar > ul .dropdown-menu .navbar-sign-up-btn {
+.navbar > ul .dropdown-menu .navbar-sign-up-btn a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -102,10 +104,19 @@ html {
   background-color: #ff934f;
 }
 .navbar.navbar-clear > ul .dropdown-menu a {
+  transition: 0.1s ease-in-out;
   color: #111111;
+}
+.navbar.navbar-clear > ul .dropdown-menu a:not(.navbar-sign-up-btn):hover {
+  color: #ffffff;
 }
 .navbar.navbar-clear > ul .dropdown-menu .navbar-sign-up-btn a {
   color: #ffffff;
+  transition: color 0.1s ease-in-out;
+}
+.navbar.navbar-clear > ul .dropdown-menu .navbar-sign-up-btn a:hover {
+  background-color: #ffffff;
+  color: #111111;
 }
 .navbar.navbar-blue {
   background-color: #119da4;
@@ -117,7 +128,11 @@ html {
   background-color: #119da4;
 }
 .navbar.navbar-blue > ul .dropdown-menu a {
+  transition: color 0.1s ease-in-out;
   color: #ffffff;
+}
+.navbar.navbar-blue > ul .dropdown-menu a:not(.navbar-sign-up-btn):hover {
+  color: #111111;
 }
 .navbar.navbar-blue > ul .dropdown-menu .navbar-sign-up-btn a {
   color: #ffffff;
@@ -229,6 +244,15 @@ html {
 #main-sign section form:valid .btn-black {
   background-color: #ff934f;
   color: #111111;
+  transition: 0.3s ease-in-out;
+}
+#main-sign section form:valid .btn-black:hover, #main-sign section form:valid .btn-black:focus, #main-sign section form:valid .btn-black:active {
+  cursor: pointer;
+  transform: translateY(-0.6rem);
+  filter: brightness(1.2);
+}
+#main-sign section form:not(:valid) .btn-black {
+  background-color: grey;
 }
 
 #chat-main {
@@ -259,6 +283,10 @@ html {
   padding: 1rem 3rem;
   border-radius: 5rem;
   margin-right: 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  white-space: nowrap;
 }
 #chat-main #chat-section {
   background-color: #ffffff;
@@ -275,7 +303,7 @@ html {
   border-radius: 1.5rem;
   width: 100%;
   max-height: 60vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 #chat-main #chat-section #chat-list .msg {
   display: flex;
@@ -326,4 +354,42 @@ html {
   color: #111111;
   font-size: 2.4rem;
   transform: translateY(-50%);
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar > ul .navbar-burger {
+    display: none;
+  }
+  .navbar > ul .dropdown-menu {
+    margin-left: auto;
+    position: relative;
+    top: unset;
+    left: unset;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+  }
+  .navbar > ul .dropdown-menu.hidden {
+    visibility: visible;
+  }
+  .navbar > ul .dropdown-menu ul {
+    display: flex;
+    align-items: center;
+  }
+  .navbar > ul .dropdown-menu ul li {
+    margin-bottom: 0;
+    margin-left: 1rem;
+  }
+  #home-main .big-btn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-inline: 4rem;
+    margin: auto auto 0;
+  }
+  #main-sign {
+    width: 60rem;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=style.css.map */

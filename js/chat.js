@@ -15,6 +15,8 @@ function user_fetch() {
     .then(function (result) {
       // number of users
       user_nb.innerHTML = `(${result.result.user.length})`;
+      // reset user list
+      user_list.innerHTML = "";
       // users name
       for (const user of result.result.user) {
         let li = document.createElement("li");
