@@ -27,7 +27,7 @@ logoutBtn.addEventListener("click", function (event) {
   let userId = localStorage.getItem("userId");
   let userToken = localStorage.getItem("userToken");
   fetch(
-    "http://greenvelvet.alwaysdata.net/kwick/api/logout/" +
+    "https://greenvelvet.alwaysdata.net/kwick/api/logout/" +
       userToken +
       "/" +
       userId
