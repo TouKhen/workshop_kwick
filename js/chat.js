@@ -13,7 +13,6 @@ function user_fetch() {
   fetch(userUrl)
     .then((response) => response.json())
     .then(function (result) {
-      console.log(result);
       // number of users
       user_nb.innerHTML = `(${result.result.user.length})`;
       // users name
@@ -41,7 +40,6 @@ function msg_fetch() {
     .then(function (result) {
       // clear message history client side
       chat_list.innerHTML = "";
-      console.log(result);
       // for each message
       for (const message of result.result.talk) {
         // msg div
@@ -64,6 +62,13 @@ function msg_fetch() {
         msg.appendChild(msg_text);
 
         chat_list.appendChild(msg);
+
+        // scroll to the bottom of the chat
+        chat_list.scrollTo({
+          top: chat_list.scrollHeight,
+          left: 0,
+          behavior: "auto",
+        });
       }
     })
     .catch((error) => console.log("error", error));
@@ -108,9 +113,8 @@ msg_form.addEventListener("submit", function (event) {
   fetch(msgUrl)
     .then((response) => response.json())
     .then(function (result) {
-      console.log(result);
       // refresh messages list
-      msg_Fetch();
+      msg_fetch();
     })
     .catch((error) => console.log("error", error));
 });
