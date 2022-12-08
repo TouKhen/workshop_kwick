@@ -24,6 +24,18 @@ if (localStorage.getItem("userToken") === null) {
 
 // logout user on click of the button
 logoutBtn.addEventListener("click", function (event) {
-  localStorage.clear();
-  document.location = "index.html";
+  let userId = localStorage.getItem("userId");
+  let userToken = localStorage.getItem("userToken");
+  fetch(
+    "http://greenvelvet.alwaysdata.net/kwick/api/logout/" +
+      userToken +
+      "/" +
+      userId
+  )
+    .then((response) => response.json())
+    .then(function (result) {
+      localStorage.clear();
+      document.location = "index.html";
+    })
+    .catch((error) => console.log("error", error));
 });

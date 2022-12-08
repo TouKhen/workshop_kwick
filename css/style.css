@@ -85,6 +85,9 @@ html {
   font-weight: 700;
   font-size: 1.8rem;
 }
+.navbar > ul .dropdown-menu .navbar-sign-up-btn {
+  margin-top: 2rem;
+}
 .navbar > ul .dropdown-menu .navbar-sign-up-btn a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -380,6 +383,9 @@ html {
   .navbar > ul .dropdown-menu ul li {
     margin-bottom: 0;
     margin-left: 1rem;
+  }
+  .navbar > ul .dropdown-menu ul .navbar-sign-up-btn {
+    margin-top: 0;
   }
   #home-main .big-btn {
     width: -webkit-fit-content;

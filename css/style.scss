@@ -104,6 +104,7 @@ html {
             }
 
             .navbar-sign-up-btn {
+                margin-top: 2rem;
                 a {
                     width: fit-content;
                     color: $white;
@@ -439,6 +440,10 @@ html {
                     li {
                         margin-bottom: 0;
                         margin-left: 1rem;
+                    }
+
+                    .navbar-sign-up-btn {
+                        margin-top: 0;
                     }
                 }
             }
