@@ -281,7 +281,6 @@ html {
         border-radius: 1.5rem;
         margin-top: 7rem;
         padding: 1rem;
-        overflow: scroll;
 
         h2 {
             font-family: $poppins;
@@ -292,6 +291,7 @@ html {
         ul {
             display: flex;
             margin-top: 1rem;
+            overflow-x: scroll;
 
             li {
                 font-family: $jua;

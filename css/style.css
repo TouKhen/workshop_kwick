@@ -240,7 +240,6 @@ html {
   border-radius: 1.5rem;
   margin-top: 7rem;
   padding: 1rem;
-  overflow: scroll;
 }
 #chat-main #users-connected h2 {
   font-family: "Poppins", sans-serif;
@@ -250,6 +249,7 @@ html {
 #chat-main #users-connected ul {
   display: flex;
   margin-top: 1rem;
+  overflow-x: scroll;
 }
 #chat-main #users-connected ul li {
   font-family: "Jua", sans-serif;

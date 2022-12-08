@@ -9,21 +9,24 @@ let userUrl =
 console.log(userUrl);
 
 // Get all the users connected
-let user_fetch = fetch(userUrl)
-  .then((response) => response.json())
-  .then(function (result) {
-    // number of users
-    user_nb.innerHTML = `(${result.result.user.length})`;
-    // users name
-    for (const user of result.result.user) {
-      let li = document.createElement("li");
-      li.innerText = user;
-      user_list.appendChild(li);
-    }
-  })
-  .catch((error) => console.log("error", error));
+function user_fetch() {
+  fetch(userUrl)
+    .then((response) => response.json())
+    .then(function (result) {
+      console.log(result);
+      // number of users
+      user_nb.innerHTML = `(${result.result.user.length})`;
+      // users name
+      for (const user of result.result.user) {
+        let li = document.createElement("li");
+        li.innerText = user;
+        user_list.appendChild(li);
+      }
+    })
+    .catch((error) => console.log("error", error));
+}
 
-user_fetch;
+user_fetch();
 
 // chat list
 
@@ -32,7 +35,7 @@ let chatUrl = "https://greenvelvet.alwaysdata.net/kwick/api/talk/list/";
 chatUrl = chatUrl + userToken + "/" + 1327171160;
 
 // Get all the messages sent to the server
-function catch_Fetch() {
+function msg_fetch() {
   fetch(chatUrl)
     .then((response) => response.json())
     .then(function (result) {
@@ -66,7 +69,16 @@ function catch_Fetch() {
     .catch((error) => console.log("error", error));
 }
 
-catch_Fetch();
+msg_fetch();
+
+// refresh every 3sec
+
+let interval = 3000;
+
+setInterval(() => {
+  user_fetch();
+  msg_fetch();
+}, interval);
 
 // send msg
 
@@ -98,7 +110,7 @@ msg_form.addEventListener("submit", function (event) {
     .then(function (result) {
       console.log(result);
       // refresh messages list
-      catch_Fetch();
+      msg_Fetch();
     })
     .catch((error) => console.log("error", error));
 });
