@@ -112,12 +112,14 @@ msg_form.addEventListener("submit", function (event) {
     "/" +
     msg_steralized;
 
-  fetch(msgUrl)
-    .then((response) => response.json())
-    .then(function (result) {
-      msg_form_input.value = "";
-      // refresh messages list
-      msg_fetch();
-    })
-    .catch((error) => console.log("error", error));
+  if (msg_steralized !== "") {
+    fetch(msgUrl)
+      .then((response) => response.json())
+      .then(function (result) {
+        msg_form_input.value = "";
+        // refresh messages list
+        msg_fetch();
+      })
+      .catch((error) => console.log("error", error));
+  }
 });
