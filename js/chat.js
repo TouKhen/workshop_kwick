@@ -115,6 +115,7 @@ msg_form.addEventListener("submit", function (event) {
   fetch(msgUrl)
     .then((response) => response.json())
     .then(function (result) {
+      msg_form_input.value = "";
       // refresh messages list
       msg_fetch();
     })
